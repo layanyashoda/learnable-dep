@@ -1,6 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700&family=Geist+Mono:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --font-geist: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
+
+
+body {
+  font-family: var(--font-geist);
+}
+
+.font-geist {
+  font-family: var(--font-geist);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
 
 @layer base {
   :root {
