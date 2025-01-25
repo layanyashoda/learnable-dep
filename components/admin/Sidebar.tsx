@@ -22,7 +22,7 @@ const Sidebar = ({ session }: { session: Session }) => {
             width={37}
             alt="site-logo"
           />
-          <h1>BookWise</h1>
+          <h1>Learnables</h1>
         </div>
 
         <div className="mt-10 flex flex-col gap-5">
@@ -67,7 +67,7 @@ const Sidebar = ({ session }: { session: Session }) => {
 
         <div className="flex flex-col max-md:hidden">
           <p className="font-semibold text-dark-200">{session?.user?.name}</p>
-          <p className="text-light-500 text-xs">{session?.user?.email}</p>
+          <p className="text-xs text-light-500">{session?.user?.email}</p>
         </div>
       </div>
     </div>

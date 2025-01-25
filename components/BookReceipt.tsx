@@ -54,7 +54,7 @@ const BookReceipt = (props: Props) => {
       pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
 
       // Save the PDF
-      pdf.save("BookWise_Ticket.pdf");
+      pdf.save("Learnables_Ticket.pdf");
 
       // Re-hide the section
       ticket.style.display = "none";

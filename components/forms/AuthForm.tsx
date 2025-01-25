@@ -77,8 +77,8 @@ const AuthForm = <T extends FieldValues>({
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-semibold text-white">
         {isSignIn
-          ? "Welcome Back to the "
-          : "Create Your Library Account"}
+          ? "Welcome Back to Learnables "
+          : "Create Your Learnables Account"}
       </h1>
       <p className="text-light-100">
         {isSignIn
