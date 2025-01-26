@@ -16,8 +16,8 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#E7C9A5",
-          admin: "#25388C",
+          DEFAULT: "#B675C7", 
+          admin: "#B675C7", 
         },
         green: {
           DEFAULT: "#027A48",

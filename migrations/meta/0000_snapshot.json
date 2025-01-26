@@ -1,5 +1,5 @@
 {
-  "id": "f3c90f6e-b514-42e6-b7dd-fa928171d0d3",
+  "id": "5916e087-c568-469f-96c6-9e9061c39bc5",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -233,7 +233,7 @@
         },
         "university_id": {
           "name": "university_id",
-          "type": "integer",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },

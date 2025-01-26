@@ -2,7 +2,7 @@ interface AuthCredentails {
   fullname: string;
   email: string;
   password: string;
-  universityId: number;
+  universityId: string;
   universityCard: string;
 }
 
@@ -10,7 +10,7 @@ interface User {
   id: string;
   fullname: string;
   email: string;
-  universityId: number;
+  universityId: string;
   universityCard: string;
   status: "PENDING" | "APPROVED" | "REJECTED" | null;
   role: "USER" | "ADMIN" | null;
