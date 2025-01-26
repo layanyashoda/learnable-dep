@@ -80,6 +80,13 @@ const Page = async () => {
               </p>
             </div>
 
+            <div className="mt-10">
+              <p className="text-lg text-light-100">Degree Program</p>
+              <p className="text-2xl font-semibold text-white">
+                {user.universityId.match(/[A-Za-z]+/)[0]}
+              </p>
+            </div>
+
             <div className="relative mt-10 h-72 w-full">
               <Image
                 src={`${config.env.imagekit.urlEndpoint}${user.universityCard}`}
