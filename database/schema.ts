@@ -16,6 +16,12 @@ export const BORROW_STATUS_ENUM = pgEnum("borrow_status", [
   "BORROWED",
   "RETURNED",
 ]);
+export const ORDER_STATUS_ENUM = pgEnum("order_status", [
+  "PENDING",
+  "PROCESSING",
+  "COMPLETED",
+  "CANCELLED",
+]);
 
 export const users = pgTable("users", {
   id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
@@ -62,5 +68,45 @@ export const borrowRecords = pgTable("borrow_records", {
   dueDate: date("due_date").notNull(),
   returnDate: date("return_date"),
   status: BORROW_STATUS_ENUM("status").default("BORROWED").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+// Customers Table
+export const customers = pgTable("customers", {
+  id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: text("email").notNull().unique(),
+  phone: varchar("phone", { length: 15 }).notNull(),
+  address: text("address").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+// Products Table
+export const products = pgTable("products", {
+  id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
+  name: varchar("name", { length: 255 }).notNull(),
+  category: varchar("category", { length: 255 }).notNull(),
+  brand: varchar("brand", { length: 255 }).notNull(),
+  description: text("description").notNull(),
+  price: integer("price").notNull(),
+  rating: integer("rating").default(0), // Optional field for product ratings
+  totalStock: integer("total_stock").notNull().default(0),
+  availableStock: integer("available_stock").notNull().default(0),
+  imageUrl: text("image_url").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+// Orders Table
+export const orders = pgTable("orders", {
+  id: uuid("id").notNull().primaryKey().defaultRandom().unique(),
+  productId: uuid("product_id")
+    .references(() => products.id)
+    .notNull(),
+  customerId: uuid("customer_id")
+    .references(() => customers.id)
+    .notNull(),
+  quantity: integer("quantity").notNull(),
+  totalAmount: integer("total_amount").notNull(),
+  status: ORDER_STATUS_ENUM("status").default("PENDING").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });

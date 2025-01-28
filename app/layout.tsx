@@ -7,6 +7,7 @@ import "./globals.css";
 import { auth } from "@/auth";
 import { Toaster } from "@/components/ui/toaster";
 import { Geist, Geist_Mono } from "next/font/google";
+import DialogflowChatbot from "@/components/DialogflowChatbot";
 
 const GeistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,42 +18,6 @@ const GeistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// const ibmPlexSans = localFont({
-//   src: [
-//     {
-//       path: "./fonts/IBMPlexSans-Regular.ttf",
-//       weight: "400",
-//       style: "normal",
-//     },
-//     {
-//       path: "./fonts/IBMPlexSans-Medium.ttf",
-//       weight: "500",
-//       style: "normal",
-//     },
-//     {
-//       path: "./fonts/IBMPlexSans-SemiBold.ttf",
-//       weight: "600",
-//       style: "normal",
-//     },
-//     {
-//       path: "./fonts/IBMPlexSans-Bold.ttf",
-//       weight: "700",
-//       style: "normal",
-//     },
-//   ],
-// });
-
-// const bebasNeue = localFont({
-//   src: [
-//     {
-//       path: "./fonts/BebasNeue-Regular.ttf",
-//       weight: "400",
-//       style: "normal",
-//     },
-//   ],
-//   variable: "--bebas-neue",
-// });
 
 export const metadata: Metadata = {
   title: "Learnables",
@@ -71,6 +36,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
           {children}
 
           <Toaster />
+          <DialogflowChatbot />
         </body>
       </SessionProvider>
     </html>

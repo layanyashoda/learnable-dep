@@ -5,6 +5,11 @@ export const navigationLinks = [
   },
 
   {
+    href: "/store",
+    label: "Store",
+  },
+
+  {
     img: "/icons/user.svg",
     selectedImg: "/icons/user-fill.svg",
     href: "/my-profile",
